@@ -1,6 +1,6 @@
 # Speaker Diarization Benchmark
 
-Benchmark and compare three pyannote speaker diarization pipelines on a local parquet dataset or individual audio files.
+Benchmark speaker diarization models on a local parquet dataset or individual audio files. Each model has its own script — run them one at a time.
 
 **Repository:** [github.com/arpitgarg88/dairization-model-test](https://github.com/arpitgarg88/dairization-model-test)
 
@@ -9,6 +9,9 @@ Benchmark and compare three pyannote speaker diarization pipelines on a local pa
 | [speaker-diarization-3.1](https://huggingface.co/pyannote/speaker-diarization-3.1) | `diarize_3_1.py` | Local (CPU/GPU) | Hugging Face |
 | [speaker-diarization-community-1](https://huggingface.co/pyannote/speaker-diarization-community-1) | `diarize_community_1.py` | Local (CPU/GPU) | Hugging Face |
 | [speaker-diarization-precision-2](https://huggingface.co/pyannote/speaker-diarization-precision-2) | `diarize_precision_2.py` | pyannoteAI cloud | pyannoteAI |
+| [diar_sortformer_4spk-v1](https://huggingface.co/nvidia/diar_sortformer_4spk-v1) | `diarize_sortformer_v1.py` | Local NeMo (CPU/GPU) | Hugging Face |
+| [diar_streaming_sortformer_4spk-v2](https://huggingface.co/nvidia/diar_streaming_sortformer_4spk-v2) | `diarize_sortformer_v2.py` | Local NeMo (CPU/GPU) | Hugging Face |
+| [diar_streaming_sortformer_4spk-v2.1](https://huggingface.co/nvidia/diar_streaming_sortformer_4spk-v2.1) | `diarize_sortformer_v2_1.py` | Local NeMo (CPU/GPU) | Hugging Face |
 
 ---
 
@@ -55,7 +58,7 @@ Edit `.env`:
 
 | Variable | Required for | Where to get it |
 |----------|--------------|-----------------|
-| `HF_TOKEN` | 3.1, community-1 | [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens) |
+| `HF_TOKEN` | pyannote local + NVIDIA Sortformer | [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens) |
 | `PYANNOTEAI_API_KEY` | precision-2 only | [dashboard.pyannote.ai](https://dashboard.pyannote.ai/) |
 
 Scripts load `.env` automatically via `python-dotenv`. You can also set variables in the shell or use `huggingface-cli login`.
@@ -84,6 +87,9 @@ Full download steps: [dataset/README.md](dataset/README.md).
    - [pyannote/segmentation-3.0](https://huggingface.co/pyannote/segmentation-3.0) (required for 3.1)
    - [pyannote/speaker-diarization-3.1](https://huggingface.co/pyannote/speaker-diarization-3.1)
    - [pyannote/speaker-diarization-community-1](https://huggingface.co/pyannote/speaker-diarization-community-1)
+   - [nvidia/diar_sortformer_4spk-v1](https://huggingface.co/nvidia/diar_sortformer_4spk-v1)
+   - [nvidia/diar_streaming_sortformer_4spk-v2](https://huggingface.co/nvidia/diar_streaming_sortformer_4spk-v2)
+   - [nvidia/diar_streaming_sortformer_4spk-v2.1](https://huggingface.co/nvidia/diar_streaming_sortformer_4spk-v2.1)
 
 ### 5. pyannoteAI API key (precision-2 only)
 
@@ -100,24 +106,29 @@ python diarize_precision_2.py --benchmark --limit 5 --yes
 
 ```
 dairization-model-test/
-├── diarize_3_1.py              # Legacy 3.1 pipeline
-├── diarize_community_1.py        # Community-1 pipeline
-├── diarize_precision_2.py        # Precision-2 cloud API
-├── run_benchmark.py              # Run & compare all models
+├── diarize_3_1.py                  # pyannote 3.1
+├── diarize_community_1.py          # pyannote community-1
+├── diarize_precision_2.py          # pyannote precision-2 (cloud API)
+├── diarize_sortformer_v1.py        # NVIDIA Sortformer offline v1
+├── diarize_sortformer_v2.py        # NVIDIA Streaming Sortformer v2
+├── diarize_sortformer_v2_1.py      # NVIDIA Streaming Sortformer v2.1
 ├── requirements.txt
-├── dataset/                      # Benchmark parquet shards (140 samples)
-├── test-audio/                   # Sample WAV files for quick tests
-├── results/                      # Benchmark JSON outputs
+├── dataset/                        # Benchmark parquet shards (140 samples)
+├── test-audio/                     # Sample WAV files for quick tests
+├── results/                        # Per-model benchmark JSON outputs
 │   ├── benchmark_speaker_diarization_3_1.json
 │   ├── benchmark_speaker_diarization_community_1.json
 │   ├── benchmark_speaker_diarization_precision_2.json
-│   ├── benchmark_comparison.json
-│   └── cache/precision-2/        # Cached precision-2 API results
+│   ├── benchmark_diar_sortformer_4spk_v1.json
+│   ├── benchmark_diar_streaming_sortformer_4spk_v2.json
+│   ├── benchmark_diar_streaming_sortformer_4spk_v2_1.json
+│   └── cache/precision-2/          # Cached precision-2 API results
 └── utils/
-    ├── audio.py                  # Load WAV / bytes (no FFmpeg required)
-    ├── dataset.py                # Parquet dataset loader
-    ├── eval.py                   # DER metrics & result export
-    └── cache.py                  # precision-2 response cache
+    ├── audio.py                    # Load WAV / bytes (no FFmpeg required)
+    ├── dataset.py                  # Parquet dataset loader
+    ├── eval.py                     # DER metrics & result export
+    ├── sortformer.py               # NVIDIA Sortformer helpers
+    └── cache.py                    # precision-2 response cache
 ```
 
 ---
@@ -146,6 +157,9 @@ Outputs are saved **next to the input file** as `.json` and `.rttm`.
 
 python diarize_3_1.py --audio test-audio/test_1.wav
 python diarize_community_1.py --audio test-audio/test_1.wav
+python diarize_sortformer_v1.py --audio test-audio/test_1.wav
+python diarize_sortformer_v2.py --audio test-audio/test_1.wav
+python diarize_sortformer_v2_1.py --audio test-audio/test_1.wav
 
 $env:PYANNOTEAI_API_KEY = "your-api-key"
 python diarize_precision_2.py --audio test-audio/test_1.wav
@@ -160,6 +174,12 @@ test-audio/test_1.speaker-diarization-community-1.json
 test-audio/test_1.speaker-diarization-community-1.rttm
 test-audio/test_1.speaker-diarization-precision-2.json
 test-audio/test_1.speaker-diarization-precision-2.rttm
+test-audio/test_1.diar-sortformer-4spk-v1.json
+test-audio/test_1.diar-sortformer-4spk-v1.rttm
+test-audio/test_1.diar-streaming-sortformer-4spk-v2.json
+test-audio/test_1.diar-streaming-sortformer-4spk-v2.rttm
+test-audio/test_1.diar-streaming-sortformer-4spk-v2.1.json
+test-audio/test_1.diar-streaming-sortformer-4spk-v2.1.rttm
 ```
 
 **JSON format:**
@@ -181,46 +201,17 @@ test-audio/test_1.speaker-diarization-precision-2.rttm
 
 ## Run benchmarks
 
+Each model is benchmarked with its own script. Run them separately and compare the JSON files in `results/`.
+
 ### Evaluation settings
 
-All benchmarks use pyannote's **"Full" DER** setup:
+All benchmarks use the same **"Full" DER** setup:
 
 - **Collar:** 0 s (no forgiveness around boundaries)
 - **Overlapping speech:** evaluated (`skip_overlap=false`)
 - **Aggregate DER:** speech-duration weighted across files
 
-### Option A — Compare local models only (~25 min for 5 samples on CPU)
-
-```powershell
-python run_benchmark.py --limit 5
-```
-
-Runs **3.1** and **community-1**, writes `results/benchmark_comparison.json`.
-
-### Option B — Include saved precision-2 results (no extra API cost)
-
-If you already ran precision-2 separately:
-
-```powershell
-python run_benchmark.py --limit 5 --merge-precision-2
-```
-
-Re-runs local models and merges existing `results/benchmark_speaker_diarization_precision_2.json` into the comparison.
-
-### Option C — Run all three models live
-
-```powershell
-$env:PYANNOTEAI_API_KEY = "your-api-key"
-python run_benchmark.py --limit 5 --include-precision-2 --yes
-```
-
-### Option D — Preview precision-2 API usage (0 API calls)
-
-```powershell
-python run_benchmark.py --limit 5 --include-precision-2 --dry-run
-```
-
-### Run one model at a time
+### pyannote models
 
 ```powershell
 python diarize_3_1.py --benchmark --limit 5
@@ -230,17 +221,32 @@ $env:PYANNOTEAI_API_KEY = "your-api-key"
 python diarize_precision_2.py --benchmark --limit 5 --yes
 ```
 
-Use `--limit N` to evaluate only the **first N samples** from the dataset. Omit `--limit` for the full 140 samples (~hours on CPU).
-
-### Full dataset
+### NVIDIA Sortformer models
 
 ```powershell
-python run_benchmark.py                          # local models, 140 files
-python run_benchmark.py --merge-precision-2      # + saved precision-2
+python diarize_sortformer_v1.py --benchmark --limit 5
+python diarize_sortformer_v2.py --benchmark --limit 5
+python diarize_sortformer_v2_1.py --benchmark --limit 5
+```
+
+Use `--limit N` to evaluate only the **first N samples** from the dataset. Omit `--limit` for the full 140 samples (~hours on CPU).
+
+### Full dataset (one model at a time)
+
+```powershell
+python diarize_3_1.py --benchmark
+python diarize_community_1.py --benchmark
+python diarize_sortformer_v1.py --benchmark
+python diarize_sortformer_v2.py --benchmark
+python diarize_sortformer_v2_1.py --benchmark
 
 $env:PYANNOTEAI_API_KEY = "your-api-key"
-python diarize_precision_2.py --benchmark --yes  # precision-2 only (140 API calls)
+python diarize_precision_2.py --benchmark --yes   # 140 API calls
 ```
+
+### Comparing models
+
+After running benchmarks with the **same `--limit`**, compare `der_pct` in each model's JSON file under `results/`. Use the same `num_samples` and `total_evaluated_speech_s` to confirm you evaluated the same subset.
 
 ---
 
@@ -272,6 +278,9 @@ python diarize_precision_2.py --benchmark --limit 5 --dry-run
 | `benchmark_speaker_diarization_3_1.json` | 3.1 aggregate + per-file metrics |
 | `benchmark_speaker_diarization_community_1.json` | community-1 aggregate + per-file metrics |
 | `benchmark_speaker_diarization_precision_2.json` | precision-2 aggregate + per-file metrics |
+| `benchmark_diar_sortformer_4spk_v1.json` | Sortformer v1 aggregate + per-file metrics |
+| `benchmark_diar_streaming_sortformer_4spk_v2.json` | Sortformer v2 aggregate + per-file metrics |
+| `benchmark_diar_streaming_sortformer_4spk_v2_1.json` | Sortformer v2.1 aggregate + per-file metrics |
 
 **Aggregate fields:**
 
@@ -296,46 +305,6 @@ python diarize_precision_2.py --benchmark --limit 5 --dry-run
 | `inference_s` | Processing time |
 | `der_pct` | File-level DER |
 | `api_call` | precision-2 only: whether API was called |
-
-### Comparison file
-
-`results/benchmark_comparison.json` contains all models side by side:
-
-```json
-{
-  "evaluation": { "collar_s": 0.0, "skip_overlap": false },
-  "num_samples": 5,
-  "total_audio_duration_s": 2112.57,
-  "models": {
-    "speaker-diarization-3.1": { "der_pct": 20.686, ... },
-    "speaker-diarization-community-1": { "der_pct": 20.57, ... },
-    "speaker-diarization-precision-2": { "der_pct": 11.651, ... }
-  },
-  "winner_by_der": "speaker-diarization-precision-2",
-  "per_file_der": {
-    "sample_0000": {
-      "speaker-diarization-3.1": 13.899,
-      "speaker-diarization-community-1": 13.474,
-      "speaker-diarization-precision-2": 10.498
-    }
-  }
-}
-```
-
-### Terminal comparison table
-
-After `run_benchmark.py`, a summary table is printed:
-
-```
-=== Comparison ===
-Model                                   DER      FA    Miss    Conf    Infer
----------------------------------------------------------------------------
-speaker-diarization-precision-2       11.65%   5.00%   6.08%   0.57%    21.9s
-speaker-diarization-community-1       20.57%   4.43%  10.69%   5.45%   148.5s
-speaker-diarization-3.1               20.69%   4.43%  10.69%   5.56%   147.2s
-
-Best model (lowest DER): speaker-diarization-precision-2
-```
 
 ### How to interpret DER
 
@@ -383,7 +352,7 @@ python diarize_precision_2.py --benchmark --limit 5 --yes
 
 ### Slow local inference
 
-Local models run on CPU by default. For GPU, both local scripts call `pipeline.to(torch.device("cuda"))` when CUDA is available.
+Local pyannote models run on CPU by default. For GPU, those scripts call `pipeline.to(torch.device("cuda"))` when CUDA is available. Sortformer scripts accept `--device cuda`.
 
 ---
 
@@ -392,7 +361,7 @@ Local models run on CPU by default. For GPU, both local scripts call `pipeline.t
 | Task | Command |
 |------|---------|
 | Smoke test one file | `python diarize_3_1.py --audio test-audio/test_1.wav` |
-| Benchmark 5 samples (local) | `python run_benchmark.py --limit 5` |
-| 3-model comparison (no new API calls) | `python run_benchmark.py --limit 5 --merge-precision-2` |
+| Benchmark 5 samples (one model) | `python diarize_3_1.py --benchmark --limit 5` |
+| Benchmark Sortformer v2.1 | `python diarize_sortformer_v2_1.py --benchmark --limit 5` |
 | Benchmark precision-2 only | `python diarize_precision_2.py --benchmark --limit 5 --yes` |
 | Preview API usage | `python diarize_precision_2.py --benchmark --limit 5 --dry-run` |

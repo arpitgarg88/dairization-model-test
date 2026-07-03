@@ -1,0 +1,99 @@
+{
+  "model": "nvidia/diar_streaming_sortformer_4spk-v2",
+  "audio_file": "test_1.wav",
+  "inference_s": 3.29,
+  "num_speakers": 3,
+  "num_segments": 18,
+  "segments": [
+    {
+      "speaker": "speaker_0",
+      "start": 0.32,
+      "end": 2.08
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 2.56,
+      "end": 6.08
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 6.16,
+      "end": 6.24
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 6.32,
+      "end": 7.6
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 8.56,
+      "end": 14.24
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 14.48,
+      "end": 16.8
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 17.2,
+      "end": 20.56
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 20.96,
+      "end": 26.16
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 26.56,
+      "end": 31.6
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 32.0,
+      "end": 37.92
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 38.32,
+      "end": 38.8
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 39.12,
+      "end": 40.24
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 40.48,
+      "end": 42.4
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 42.56,
+      "end": 44.08
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 44.48,
+      "end": 46.96
+    },
+    {
+      "speaker": "speaker_2",
+      "start": 47.04,
+      "end": 48.32
+    },
+    {
+      "speaker": "speaker_2",
+      "start": 49.28,
+      "end": 50.8
+    },
+    {
+      "speaker": "speaker_2",
+      "start": 51.6,
+      "end": 55.28
+    }
+  ]
+}

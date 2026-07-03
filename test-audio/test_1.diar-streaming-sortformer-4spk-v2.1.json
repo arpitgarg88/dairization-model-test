@@ -1,0 +1,64 @@
+{
+  "model": "nvidia/diar_streaming_sortformer_4spk-v2.1",
+  "audio_file": "test_1.wav",
+  "inference_s": 3.33,
+  "num_speakers": 3,
+  "num_segments": 11,
+  "segments": [
+    {
+      "speaker": "speaker_0",
+      "start": 0.32,
+      "end": 2.08
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 2.56,
+      "end": 7.68
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 8.56,
+      "end": 16.88
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 17.2,
+      "end": 20.64
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 20.96,
+      "end": 26.4
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 26.56,
+      "end": 38.08
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 38.24,
+      "end": 44.24
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 44.4,
+      "end": 46.96
+    },
+    {
+      "speaker": "speaker_2",
+      "start": 47.04,
+      "end": 48.32
+    },
+    {
+      "speaker": "speaker_2",
+      "start": 49.28,
+      "end": 50.8
+    },
+    {
+      "speaker": "speaker_2",
+      "start": 51.6,
+      "end": 55.28
+    }
+  ]
+}

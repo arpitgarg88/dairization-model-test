@@ -1,7 +1,7 @@
 {
   "model": "pyannote/speaker-diarization-community-1",
   "audio_file": "test_1.wav",
-  "inference_s": 16.26,
+  "inference_s": 15.86,
   "num_speakers": 2,
   "num_segments": 7,
   "segments": [

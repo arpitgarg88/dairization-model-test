@@ -8,6 +8,11 @@ soundfile==0.14.0
 pandas==3.0.3
 pyarrow==24.0.0
 tqdm==4.68.3
-huggingface-hub==1.21.0
+huggingface-hub>=0.36.2
 torch==2.12.1
 torchaudio==2.11.0
+# NVIDIA NeMo Sortformer (diarize_sortformer_v1.py, diarize_sortformer_v2.py, diarize_sortformer_v2_1.py)
+Cython>=3.0
+packaging>=24.0
+nemo_toolkit[asr]>=2.7.0
+librosa>=0.11.0

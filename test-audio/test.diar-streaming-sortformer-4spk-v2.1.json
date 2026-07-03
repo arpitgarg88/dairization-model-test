@@ -1,0 +1,34 @@
+{
+  "model": "nvidia/diar_streaming_sortformer_4spk-v2.1",
+  "audio_file": "test.wav",
+  "inference_s": 3.13,
+  "num_speakers": 2,
+  "num_segments": 5,
+  "segments": [
+    {
+      "speaker": "speaker_0",
+      "start": 0.32,
+      "end": 4.24
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 4.96,
+      "end": 14.48
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 15.04,
+      "end": 15.68
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 16.24,
+      "end": 18.16
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 18.48,
+      "end": 27.35
+    }
+  ]
+}

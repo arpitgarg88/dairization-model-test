@@ -4,19 +4,105 @@
     "skip_overlap": false
   },
   "num_samples": 5,
+  "total_audio_duration_s": 2112.57,
+  "total_evaluated_speech_s": 1891.48,
   "models": {
-    "speaker-diarization-3.1": {
-      "der_pct": 20.686,
-      "false_alarm_pct": 4.428,
-      "missed_detection_pct": 10.694,
-      "confusion_pct": 5.564
+    "speaker-diarization-precision-2": {
+      "model_id": "pyannote/speaker-diarization-precision-2",
+      "backend": "pyannoteAI-cloud",
+      "der_pct": 11.651,
+      "false_alarm_pct": 4.997,
+      "missed_detection_pct": 6.081,
+      "confusion_pct": 0.573,
+      "avg_inference_s": 23.37
+    },
+    "diar-streaming-sortformer-4spk-v2.1": {
+      "model_id": "nvidia/diar_streaming_sortformer_4spk-v2.1",
+      "backend": "nemo-cpu",
+      "der_pct": 14.044,
+      "false_alarm_pct": 7.946,
+      "missed_detection_pct": 5.46,
+      "confusion_pct": 0.638,
+      "avg_inference_s": 11.37
+    },
+    "diar-streaming-sortformer-4spk-v2": {
+      "model_id": "nvidia/diar_streaming_sortformer_4spk-v2",
+      "backend": "nemo-cpu",
+      "der_pct": 15.361,
+      "false_alarm_pct": 10.672,
+      "missed_detection_pct": 4.079,
+      "confusion_pct": 0.609,
+      "avg_inference_s": 11.57
+    },
+    "diar-sortformer-4spk-v1": {
+      "model_id": "nvidia/diar_sortformer_4spk-v1",
+      "backend": "nemo-cpu",
+      "der_pct": 17.453,
+      "false_alarm_pct": 11.644,
+      "missed_detection_pct": 4.755,
+      "confusion_pct": 1.053,
+      "avg_inference_s": 28.69
     },
     "speaker-diarization-community-1": {
+      "model_id": "pyannote/speaker-diarization-community-1",
+      "backend": "local-cpu",
       "der_pct": 20.57,
       "false_alarm_pct": 4.428,
       "missed_detection_pct": 10.694,
-      "confusion_pct": 5.448
+      "confusion_pct": 5.448,
+      "avg_inference_s": 143.88
+    },
+    "speaker-diarization-3.1": {
+      "model_id": "pyannote/speaker-diarization-3.1",
+      "backend": "local-cpu",
+      "der_pct": 20.686,
+      "false_alarm_pct": 4.428,
+      "missed_detection_pct": 10.694,
+      "confusion_pct": 5.564,
+      "avg_inference_s": 146.59
     }
   },
-  "winner_by_der": "speaker-diarization-community-1"
+  "winner_by_der": "speaker-diarization-precision-2",
+  "per_file_der": {
+    "sample_0000": {
+      "speaker-diarization-precision-2": 10.498,
+      "diar-streaming-sortformer-4spk-v2.1": 15.389,
+      "diar-sortformer-4spk-v1": 14.263,
+      "diar-streaming-sortformer-4spk-v2": 17.143,
+      "speaker-diarization-community-1": 13.474,
+      "speaker-diarization-3.1": 13.899
+    },
+    "sample_0001": {
+      "speaker-diarization-precision-2": 13.332,
+      "diar-streaming-sortformer-4spk-v2.1": 14.367,
+      "diar-sortformer-4spk-v1": 20.685,
+      "diar-streaming-sortformer-4spk-v2": 14.698,
+      "speaker-diarization-community-1": 24.061,
+      "speaker-diarization-3.1": 22.478
+    },
+    "sample_0002": {
+      "speaker-diarization-precision-2": 10.664,
+      "diar-streaming-sortformer-4spk-v2.1": 13.298,
+      "diar-sortformer-4spk-v1": 13.869,
+      "diar-streaming-sortformer-4spk-v2": 15.492,
+      "speaker-diarization-community-1": 25.411,
+      "speaker-diarization-3.1": 30.636
+    },
+    "sample_0003": {
+      "speaker-diarization-precision-2": 23.427,
+      "diar-streaming-sortformer-4spk-v2.1": 25.297,
+      "diar-sortformer-4spk-v1": 26.561,
+      "diar-streaming-sortformer-4spk-v2": 28.028,
+      "speaker-diarization-community-1": 29.736,
+      "speaker-diarization-3.1": 29.641
+    },
+    "sample_0004": {
+      "speaker-diarization-precision-2": 6.701,
+      "diar-streaming-sortformer-4spk-v2.1": 9.553,
+      "diar-sortformer-4spk-v1": 13.598,
+      "diar-streaming-sortformer-4spk-v2": 10.948,
+      "speaker-diarization-community-1": 14.974,
+      "speaker-diarization-3.1": 14.957
+    }
+  }
 }
