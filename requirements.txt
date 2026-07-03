@@ -1,0 +1,13 @@
+python-dotenv==1.1.0
+pyannote-audio==4.0.7
+pyannote-core==6.0.1
+pyannote-database==6.1.1
+pyannote-metrics==4.1
+pyannote-pipeline==4.0.0
+soundfile==0.14.0
+pandas==3.0.3
+pyarrow==24.0.0
+tqdm==4.68.3
+huggingface-hub==1.21.0
+torch==2.12.1
+torchaudio==2.11.0

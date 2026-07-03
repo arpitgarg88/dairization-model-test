@@ -1,0 +1,84 @@
+{
+  "model": "pyannote/speaker-diarization-precision-2",
+  "backend": "pyannoteAI-cloud",
+  "num_samples": 5,
+  "api_calls_made": 5,
+  "api_calls_skipped_cached": 0,
+  "total_audio_duration_s": 2112.57,
+  "total_evaluated_speech_s": 1891.48,
+  "der_pct": 11.651,
+  "false_alarm_pct": 4.997,
+  "missed_detection_pct": 6.081,
+  "confusion_pct": 0.573,
+  "evaluation": {
+    "collar_s": 0.0,
+    "skip_overlap": false
+  },
+  "per_file": [
+    {
+      "sample_id": "sample_0000",
+      "duration_s": 303.1200000000001,
+      "ref_speakers": 2,
+      "hyp_speakers": 2,
+      "inference_s": 17.72,
+      "api_call": true,
+      "der_pct": 10.498,
+      "false_alarm_pct": 7.126,
+      "missed_detection_pct": 3.076,
+      "confusion_pct": 0.296,
+      "evaluated_speech_s": 260.05
+    },
+    {
+      "sample_id": "sample_0001",
+      "duration_s": 602.2099999999999,
+      "ref_speakers": 2,
+      "hyp_speakers": 2,
+      "inference_s": 27.81,
+      "api_call": true,
+      "der_pct": 13.332,
+      "false_alarm_pct": 3.993,
+      "missed_detection_pct": 8.885,
+      "confusion_pct": 0.454,
+      "evaluated_speech_s": 637.067
+    },
+    {
+      "sample_id": "sample_0002",
+      "duration_s": 304.68,
+      "ref_speakers": 2,
+      "hyp_speakers": 2,
+      "inference_s": 19.9,
+      "api_call": true,
+      "der_pct": 10.664,
+      "false_alarm_pct": 5.041,
+      "missed_detection_pct": 5.124,
+      "confusion_pct": 0.499,
+      "evaluated_speech_s": 219.281
+    },
+    {
+      "sample_id": "sample_0003",
+      "duration_s": 300.56,
+      "ref_speakers": 2,
+      "hyp_speakers": 2,
+      "inference_s": 20.36,
+      "api_call": true,
+      "der_pct": 23.427,
+      "false_alarm_pct": 14.19,
+      "missed_detection_pct": 6.306,
+      "confusion_pct": 2.93,
+      "evaluated_speech_s": 196.23
+    },
+    {
+      "sample_id": "sample_0004",
+      "duration_s": 602.0,
+      "ref_speakers": 2,
+      "hyp_speakers": 2,
+      "inference_s": 23.14,
+      "api_call": true,
+      "der_pct": 6.701,
+      "false_alarm_pct": 2.011,
+      "missed_detection_pct": 4.632,
+      "confusion_pct": 0.058,
+      "evaluated_speech_s": 578.855
+    }
+  ]
+}

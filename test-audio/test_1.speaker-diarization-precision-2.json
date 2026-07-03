@@ -1,0 +1,39 @@
+{
+  "model": "pyannote/speaker-diarization-precision-2",
+  "audio_file": "test_1.wav",
+  "inference_s": 19.52,
+  "num_speakers": 3,
+  "num_segments": 6,
+  "segments": [
+    {
+      "speaker": "SPEAKER_00",
+      "start": 0.205,
+      "end": 2.085
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 2.445,
+      "end": 7.625
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 8.485,
+      "end": 46.925
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 47.085,
+      "end": 48.385
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 49.145,
+      "end": 50.805
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 51.505,
+      "end": 55.345
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Secrets — never commit
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Dataset (large parquet shards — add locally, see dataset/README.md)
+dataset/*.parquet
+
+# precision-2 API response cache (rebuilt on re-run)
+results/cache/
+
+# Logs
+results/benchmark_run.log
+results/benchmark_run.err
+*.log
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Hugging Face model cache (downloaded automatically on first run)
+# Users' cache lives outside the repo by default (~/.cache/huggingface)
