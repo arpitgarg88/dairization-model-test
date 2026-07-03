@@ -26,7 +26,8 @@ pip install -r requirements.txt
 copy .env.example .env
 # Edit .env with your HF_TOKEN and PYANNOTEAI_API_KEY
 
-# Add dataset parquet files to dataset/ (see dataset/README.md)
+# Add dataset — download from Hugging Face (see dataset/README.md)
+# https://huggingface.co/datasets/talkbank/callhome/tree/main/eng
 ```
 
 ---
@@ -61,7 +62,14 @@ Scripts load `.env` automatically via `python-dotenv`. You can also set variable
 
 ### 3. Dataset
 
-The **parquet dataset (~2.2 GB) is not in git**. Copy your 5 shard files into `dataset/` — see [dataset/README.md](dataset/README.md).
+The **parquet dataset (~2.2 GB) is not in git**. Download it from Hugging Face:
+
+**[talkbank/callhome — English (`eng`)](https://huggingface.co/datasets/talkbank/callhome/tree/main/eng)**
+
+- Accept the gated dataset terms on the Hub (login required).
+- Download the 5 `data-*-of-00005.parquet` files into `dataset/`.
+
+Full download steps: [dataset/README.md](dataset/README.md).
 
 ### 4. Hugging Face model access (local models)
 
