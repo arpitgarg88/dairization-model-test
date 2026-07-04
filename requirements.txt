@@ -11,8 +11,11 @@ tqdm==4.68.3
 huggingface-hub>=0.36.2
 torch==2.12.1
 torchaudio==2.11.0
-# NVIDIA NeMo Sortformer (diarize_sortformer_v1.py, diarize_sortformer_v2.py, diarize_sortformer_v2_1.py)
+# NVIDIA NeMo Sortformer + MSDD (diarize_sortformer_*.py, diarize_msdd_telephonic.py)
 Cython>=3.0
 packaging>=24.0
 nemo_toolkit[asr]>=2.7.0
 librosa>=0.11.0
+# Nemotron 3.5 ASR (transcribe_nemotron35_pipeline.py) — install from git until HF release:
+# pip install git+https://github.com/huggingface/transformers.git
+transformers>=5.14.0.dev0

@@ -1,0 +1,29 @@
+{
+  "model": "deepgram/nova-3+diarize_v2",
+  "audio_file": "hindi-test.wav",
+  "inference_s": 8.75,
+  "num_speakers": 3,
+  "num_segments": 4,
+  "segments": [
+    {
+      "speaker": "SPEAKER_00",
+      "start": 3.2,
+      "end": 4.72
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 5.12,
+      "end": 14.48
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 15.025,
+      "end": 18.385
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "start": 18.385,
+      "end": 20.065
+    }
+  ]
+}

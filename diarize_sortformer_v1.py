@@ -1,12 +1,7 @@
-"""
-Speaker diarization using nvidia/diar_sortformer_4spk-v1 (NeMo Sortformer offline).
-
-Model: https://huggingface.co/nvidia/diar_sortformer_4spk-v1
-Requires: nemo_toolkit[asr], HF_TOKEN (accept model license on Hugging Face)
+"""Sortformer 4spk v1 offline (NeMo).
 
 Usage:
   python diarize_sortformer_v1.py --audio test-audio/test_1.wav
-  python diarize_sortformer_v1.py --benchmark
   python diarize_sortformer_v1.py --benchmark --limit 5
 """
 

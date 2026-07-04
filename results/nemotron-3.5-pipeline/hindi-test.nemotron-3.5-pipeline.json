@@ -1,0 +1,81 @@
+{
+  "pipeline": "sortformer-v2.1 + nemotron-3.5-asr",
+  "diar_model": "nvidia/diar_streaming_sortformer_4spk-v2.1",
+  "asr_model": "nvidia/nemotron-3.5-asr-streaming-0.6b",
+  "target_lang": "auto",
+  "audio_file": "hindi-test.wav",
+  "backend": "nemo-cpu+transformers-cpu",
+  "inference_s": {
+    "total": 4.51,
+    "diarization": 1.1,
+    "transcription": 3.41,
+    "wall_clock": 6.1
+  },
+  "num_speakers": 4,
+  "num_segments": 7,
+  "speakers": [
+    "speaker_0",
+    "speaker_1",
+    "speaker_2",
+    "speaker_3"
+  ],
+  "segments": [
+    {
+      "speaker": "speaker_0",
+      "start": 3.44,
+      "end": 4.56,
+      "start_ms": 3440,
+      "end_ms": 4560,
+      "text": "लस फाइव सेकंड"
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 5.36,
+      "end": 7.2,
+      "start_ms": 5360,
+      "end_ms": 7200,
+      "text": "लिफ्ट ऑफ नॉर्मल"
+    },
+    {
+      "speaker": "speaker_2",
+      "start": 6.8,
+      "end": 13.6,
+      "start_ms": 6800,
+      "end_ms": 13600,
+      "text": "हिल वी हैव एव ए मैजिस्टिक लीफ्ट टॉप ऑफ एलबीएम थ्री एम फोर रॉकेट कैरी इन प्रिस्टीज चंद्रयान थ्री स्पेसक्राफ्ट।"
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 13.6,
+      "end": 14.4,
+      "start_ms": 13600,
+      "end_ms": 14400,
+      "text": "टू ट्रैकिंग"
+    },
+    {
+      "speaker": "speaker_3",
+      "start": 15.2,
+      "end": 19.84,
+      "start_ms": 15200,
+      "end_ms": 19840,
+      "text": "प्रज्ज्वलन और सफलतापूर्ण उत्थापन एलवीएम थ्री एम फोर रॉकेट का।"
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 17.52,
+      "end": 17.6,
+      "start_ms": 17520,
+      "end_ms": 17600,
+      "text": ""
+    },
+    {
+      "speaker": "speaker_3",
+      "start": 22.16,
+      "end": 34.48,
+      "start_ms": 22160,
+      "end_ms": 34480,
+      "text": "भीम का रॉकेट आसमान को चीरते हुए अपनी भयांक दहाड़ से चारों ओर कंपन उत्पन्न कर रहा है।  इसे हम यहां महसूस कर सकते हैं और यही दहाड़ है जो वैज्ञानिकों को रोमांचित करती है।"
+    }
+  ],
+  "full_transcript": "लस फाइव सेकंड लिफ्ट ऑफ नॉर्मल हिल वी हैव एव ए मैजिस्टिक लीफ्ट टॉप ऑफ एलबीएम थ्री एम फोर रॉकेट कैरी इन प्रिस्टीज चंद्रयान थ्री स्पेसक्राफ्ट। टू ट्रैकिंग प्रज्ज्वलन और सफलतापूर्ण उत्थापन एलवीएम थ्री एम फोर रॉकेट का। भीम का रॉकेट आसमान को चीरते हुए अपनी भयांक दहाड़ से चारों ओर कंपन उत्पन्न कर रहा है।  इसे हम यहां महसूस कर सकते हैं और यही दहाड़ है जो वैज्ञानिकों को रोमांचित करती है।"
+}

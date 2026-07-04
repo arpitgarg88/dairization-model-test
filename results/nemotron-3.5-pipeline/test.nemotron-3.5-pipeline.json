@@ -1,0 +1,63 @@
+{
+  "pipeline": "sortformer-v2.1 + nemotron-3.5-asr",
+  "diar_model": "nvidia/diar_streaming_sortformer_4spk-v2.1",
+  "asr_model": "nvidia/nemotron-3.5-asr-streaming-0.6b",
+  "target_lang": "auto",
+  "audio_file": "test.wav",
+  "backend": "nemo-cpu+transformers-cpu",
+  "inference_s": {
+    "total": 3.42,
+    "diarization": 0.73,
+    "transcription": 2.68,
+    "wall_clock": 3.49
+  },
+  "num_speakers": 2,
+  "num_segments": 5,
+  "speakers": [
+    "speaker_0",
+    "speaker_1"
+  ],
+  "segments": [
+    {
+      "speaker": "speaker_0",
+      "start": 0.32,
+      "end": 4.24,
+      "start_ms": 320,
+      "end_ms": 4240,
+      "text": "So Aaron, in your email you said you wanted to talk about the exam."
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 4.96,
+      "end": 14.48,
+      "start_ms": 4960,
+      "end_ms": 14480,
+      "text": "Yeah um I've just never taken a class with so many different readings I've managed to keep up with all the assignments, but I'm not sure how to"
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 15.04,
+      "end": 15.68,
+      "start_ms": 15040,
+      "end_ms": 15680,
+      "text": "How do"
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 16.24,
+      "end": 18.16,
+      "start_ms": 16240,
+      "end_ms": 18160,
+      "text": "How to review everything."
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 18.48,
+      "end": 27.35,
+      "start_ms": 18480,
+      "end_ms": 27350,
+      "text": "In other classes I've had, there's usually just one book to review, not three different books plus all those other text excerpts and videos."
+    }
+  ],
+  "full_transcript": "So Aaron, in your email you said you wanted to talk about the exam. Yeah um I've just never taken a class with so many different readings I've managed to keep up with all the assignments, but I'm not sure how to How do How to review everything. In other classes I've had, there's usually just one book to review, not three different books plus all those other text excerpts and videos."
+}

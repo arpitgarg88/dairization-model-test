@@ -1,12 +1,7 @@
-"""
-Speaker diarization using pyannote/speaker-diarization-community-1.
-
-Model: https://huggingface.co/pyannote/speaker-diarization-community-1
-Requires: pyannote.audio >= 4.0 (tested with 4.0.7)
+"""pyannote community-1 — local diarization.
 
 Usage:
   python diarize_community_1.py --audio test-audio/test_1.wav
-  python diarize_community_1.py --benchmark
   python diarize_community_1.py --benchmark --limit 5
 """
 

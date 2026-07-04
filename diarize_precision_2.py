@@ -1,20 +1,8 @@
-"""
-Speaker diarization using pyannoteAI precision-2 (cloud API).
-
-Model: https://huggingface.co/pyannote/speaker-diarization-precision-2
-Runs on pyannoteAI servers — each uncached audio file costs one API job.
-
-API key: set PYANNOTEAI_API_KEY (never commit the key to source code).
+"""pyannoteAI precision-2 — cloud diarization (paid API, cached).
 
 Usage:
-  # Single file (1 API call, skipped if cached output exists)
-  $env:PYANNOTEAI_API_KEY="your-key"
   python diarize_precision_2.py --audio test-audio/test_1.wav
-
-  # Benchmark on 5 dataset samples (requires --yes to confirm API usage)
   python diarize_precision_2.py --benchmark --limit 5 --yes
-
-  # Preview API usage without calling the API
   python diarize_precision_2.py --benchmark --limit 5 --dry-run
 """
 

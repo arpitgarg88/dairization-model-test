@@ -1,0 +1,69 @@
+{
+  "model": "pyannote/speaker-diarization-community-1",
+  "audio_file": "hindi-test.wav",
+  "inference_s": 9.83,
+  "num_speakers": 2,
+  "num_segments": 12,
+  "segments": [
+    {
+      "speaker": "SPEAKER_00",
+      "start": 3.423,
+      "end": 3.524
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 3.524,
+      "end": 3.592
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 3.592,
+      "end": 3.845
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 3.845,
+      "end": 3.912
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 3.912,
+      "end": 4.216
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 4.216,
+      "end": 4.351
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 5.38,
+      "end": 7.186
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 6.629,
+      "end": 14.358
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 9.042,
+      "end": 9.768
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 15.185,
+      "end": 19.741
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 22.087,
+      "end": 28.33
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 28.735,
+      "end": 34.422
+    }
+  ]
+}

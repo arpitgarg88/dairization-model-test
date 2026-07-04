@@ -1,0 +1,69 @@
+{
+  "model": "diar_msdd_telephonic",
+  "audio_file": "hindi-test.wav",
+  "inference_s": 108.62,
+  "num_speakers": 2,
+  "num_segments": 12,
+  "segments": [
+    {
+      "speaker": "speaker_0",
+      "start": 2.06,
+      "end": 2.33
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 3.34,
+      "end": 4.33
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 5.26,
+      "end": 5.85
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 6.54,
+      "end": 10.81
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 11.02,
+      "end": 14.33
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 15.1,
+      "end": 18.01
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 18.3,
+      "end": 19.77
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 22.06,
+      "end": 24.65
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 24.94,
+      "end": 28.25
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 28.78,
+      "end": 30.49
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 30.86,
+      "end": 34.41
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 37.02,
+      "end": 37.29
+    }
+  ]
+}

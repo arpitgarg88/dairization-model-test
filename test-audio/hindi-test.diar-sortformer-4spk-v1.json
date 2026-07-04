@@ -1,0 +1,44 @@
+{
+  "model": "nvidia/diar_sortformer_4spk-v1",
+  "audio_file": "hindi-test.wav",
+  "inference_s": 2.77,
+  "num_speakers": 4,
+  "num_segments": 7,
+  "segments": [
+    {
+      "speaker": "speaker_0",
+      "start": 3.36,
+      "end": 4.48
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 5.36,
+      "end": 7.28
+    },
+    {
+      "speaker": "speaker_2",
+      "start": 6.8,
+      "end": 13.6
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 13.6,
+      "end": 14.48
+    },
+    {
+      "speaker": "speaker_3",
+      "start": 15.2,
+      "end": 19.92
+    },
+    {
+      "speaker": "speaker_3",
+      "start": 22.08,
+      "end": 28.4
+    },
+    {
+      "speaker": "speaker_3",
+      "start": 28.88,
+      "end": 34.64
+    }
+  ]
+}

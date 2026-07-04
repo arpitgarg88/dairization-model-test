@@ -1,0 +1,79 @@
+{
+  "model": "deepgram/nova-3+diarize_v2",
+  "audio_file": "test_1.wav",
+  "inference_s": null,
+  "num_speakers": 3,
+  "num_segments": 14,
+  "segments": [
+    {
+      "speaker": "SPEAKER_00",
+      "start": 0.32,
+      "end": 2.0
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 2.48,
+      "end": 7.76
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 8.56,
+      "end": 16.965
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 17.205,
+      "end": 18.165
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 18.165,
+      "end": 20.725
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 20.965,
+      "end": 26.085
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 26.5,
+      "end": 30.66
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 30.66,
+      "end": 42.725
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 42.805,
+      "end": 44.325
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 44.565,
+      "end": 45.205
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 45.925,
+      "end": 47.845
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 47.845,
+      "end": 48.325
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 49.285,
+      "end": 50.885
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 51.525,
+      "end": 57.205
+    }
+  ]
+}

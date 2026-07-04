@@ -1,0 +1,74 @@
+{
+  "model": "pyannote/speaker-diarization-precision-2",
+  "audio_file": "hindi-test.wav",
+  "inference_s": 18.55,
+  "num_speakers": 3,
+  "num_segments": 13,
+  "segments": [
+    {
+      "speaker": "SPEAKER_01",
+      "start": 3.345,
+      "end": 4.405
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 5.285,
+      "end": 7.165
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 6.765,
+      "end": 13.485
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 9.125,
+      "end": 9.585
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 13.545,
+      "end": 14.385
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 15.145,
+      "end": 19.685
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 16.745,
+      "end": 16.905
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 17.285,
+      "end": 17.585
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 22.045,
+      "end": 23.265
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 23.405,
+      "end": 28.125
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 28.785,
+      "end": 30.405
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 30.885,
+      "end": 32.985
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 33.265,
+      "end": 34.365
+    }
+  ]
+}

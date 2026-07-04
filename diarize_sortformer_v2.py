@@ -1,14 +1,7 @@
-"""
-Speaker diarization using nvidia/diar_streaming_sortformer_4spk-v2 (NeMo).
-
-Model: https://huggingface.co/nvidia/diar_streaming_sortformer_4spk-v2
-Requires: nemo_toolkit[asr], HF_TOKEN (accept model license on Hugging Face)
-
-Uses high-latency streaming settings for offline batch diarization (best accuracy).
+"""Streaming Sortformer v2 (NeMo).
 
 Usage:
   python diarize_sortformer_v2.py --audio test-audio/test_1.wav
-  python diarize_sortformer_v2.py --benchmark
   python diarize_sortformer_v2.py --benchmark --limit 5
 """
 

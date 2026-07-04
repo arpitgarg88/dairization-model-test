@@ -1,0 +1,112 @@
+{
+  "pipeline": "sortformer-v2.1 + nemotron-3.5-asr",
+  "diar_model": "nvidia/diar_streaming_sortformer_4spk-v2.1",
+  "asr_model": "nvidia/nemotron-3.5-asr-streaming-0.6b",
+  "target_lang": "auto",
+  "audio_file": "test_1.wav",
+  "backend": "nemo-cpu+transformers-cpu",
+  "inference_s": {
+    "total": 6.44,
+    "diarization": 1.38,
+    "transcription": 5.06,
+    "wall_clock": 6.61
+  },
+  "num_speakers": 3,
+  "num_segments": 11,
+  "speakers": [
+    "speaker_0",
+    "speaker_1",
+    "speaker_2"
+  ],
+  "segments": [
+    {
+      "speaker": "speaker_0",
+      "start": 0.32,
+      "end": 2.08,
+      "start_ms": 320,
+      "end_ms": 2080,
+      "text": "Yeah I guess"
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 2.56,
+      "end": 7.68,
+      "start_ms": 2560,
+      "end_ms": 7680,
+      "text": "I just saw Aristotle thought Flames kept going up and up and up."
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 8.56,
+      "end": 16.88,
+      "start_ms": 8560,
+      "end_ms": 16880,
+      "text": "No Aristotle thought the flames would stop at some point at their natural place in the sky, but I can understand how you'd be confused."
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 17.2,
+      "end": 20.64,
+      "start_ms": 17200,
+      "end_ms": 20640,
+      "text": "Aristotle's ideas seem odd to us today"
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 20.96,
+      "end": 26.4,
+      "start_ms": 20960,
+      "end_ms": 26400,
+      "text": "Now there was another early scientist whose ideas on gravity may seem more familiar."
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 26.56,
+      "end": 38.08,
+      "start_ms": 26560,
+      "end_ms": 38080,
+      "text": "An ancient Indian thinker from the five hundred seconds Brahmagupta that was his name.  He believed that the earth was basically a giant ball that was full of gravity and pulled things down to it."
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 38.24,
+      "end": 44.24,
+      "start_ms": 38240,
+      "end_ms": 44240,
+      "text": "So around Earth with its own gravitational pull, just like we believe today"
+    },
+    {
+      "speaker": "speaker_1",
+      "start": 44.4,
+      "end": 46.96,
+      "start_ms": 44400,
+      "end_ms": 46960,
+      "text": "Now uh yeah."
+    },
+    {
+      "speaker": "speaker_2",
+      "start": 47.04,
+      "end": 48.32,
+      "start_ms": 47040,
+      "end_ms": 48320,
+      "text": "Sorry I"
+    },
+    {
+      "speaker": "speaker_2",
+      "start": 49.28,
+      "end": 50.8,
+      "start_ms": 49280,
+      "end_ms": 50800,
+      "text": "I'm confused again"
+    },
+    {
+      "speaker": "speaker_2",
+      "start": 51.6,
+      "end": 55.28,
+      "start_ms": 51600,
+      "end_ms": 55280,
+      "text": "I thought nobody knew the Earth was round until."
+    }
+  ],
+  "full_transcript": "Yeah I guess I just saw Aristotle thought Flames kept going up and up and up. No Aristotle thought the flames would stop at some point at their natural place in the sky, but I can understand how you'd be confused. Aristotle's ideas seem odd to us today Now there was another early scientist whose ideas on gravity may seem more familiar. An ancient Indian thinker from the five hundred seconds Brahmagupta that was his name.  He believed that the earth was basically a giant ball that was full of gravity and pulled things down to it. So around Earth with its own gravitational pull, just like we believe today Now uh yeah. Sorry I I'm confused again I thought nobody knew the Earth was round until."
+}

@@ -1,0 +1,86 @@
+{
+  "model": "deepgram/nova-3+diarize_v2",
+  "backend": "deepgram-cloud",
+  "deepgram_model": "nova-3",
+  "deepgram_diarize_model": "v2",
+  "num_samples": 5,
+  "api_calls_made": 5,
+  "api_calls_skipped_cached": 0,
+  "total_audio_duration_s": 2112.57,
+  "total_evaluated_speech_s": 1891.48,
+  "der_pct": 33.887,
+  "false_alarm_pct": 7.388,
+  "missed_detection_pct": 14.019,
+  "confusion_pct": 12.48,
+  "evaluation": {
+    "collar_s": 0.0,
+    "skip_overlap": false
+  },
+  "per_file": [
+    {
+      "sample_id": "sample_0000",
+      "duration_s": 303.1200000000001,
+      "ref_speakers": 2,
+      "hyp_speakers": 2,
+      "inference_s": 10.73,
+      "api_call": true,
+      "der_pct": 32.669,
+      "false_alarm_pct": 7.806,
+      "missed_detection_pct": 10.933,
+      "confusion_pct": 13.93,
+      "evaluated_speech_s": 260.05
+    },
+    {
+      "sample_id": "sample_0001",
+      "duration_s": 602.2099999999999,
+      "ref_speakers": 2,
+      "hyp_speakers": 2,
+      "inference_s": 19.87,
+      "api_call": true,
+      "der_pct": 34.517,
+      "false_alarm_pct": 4.97,
+      "missed_detection_pct": 16.886,
+      "confusion_pct": 12.661,
+      "evaluated_speech_s": 637.067
+    },
+    {
+      "sample_id": "sample_0002",
+      "duration_s": 304.68,
+      "ref_speakers": 2,
+      "hyp_speakers": 2,
+      "inference_s": 12.25,
+      "api_call": true,
+      "der_pct": 34.454,
+      "false_alarm_pct": 12.812,
+      "missed_detection_pct": 7.835,
+      "confusion_pct": 13.806,
+      "evaluated_speech_s": 219.281
+    },
+    {
+      "sample_id": "sample_0003",
+      "duration_s": 300.56,
+      "ref_speakers": 2,
+      "hyp_speakers": 2,
+      "inference_s": 11.34,
+      "api_call": true,
+      "der_pct": 51.365,
+      "false_alarm_pct": 14.972,
+      "missed_detection_pct": 23.707,
+      "confusion_pct": 12.686,
+      "evaluated_speech_s": 196.23
+    },
+    {
+      "sample_id": "sample_0004",
+      "duration_s": 602.0,
+      "ref_speakers": 2,
+      "hyp_speakers": 2,
+      "inference_s": 20.68,
+      "api_call": true,
+      "der_pct": 27.602,
+      "false_alarm_pct": 5.236,
+      "missed_detection_pct": 11.31,
+      "confusion_pct": 11.057,
+      "evaluated_speech_s": 578.855
+    }
+  ]
+}
