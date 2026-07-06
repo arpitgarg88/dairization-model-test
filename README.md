@@ -26,6 +26,7 @@ This repo **includes `.env` in git on purpose** for private testing. It holds AP
 |----------|---------|
 | `PYANNOTEAI_API_KEY` | `diarize_precision_2.py` |
 | `DEEPGRAM_API_KEY` | `diarize_deepgram_nova3.py` |
+| `SARVAM_API_KEY` | `diarize_sarvam_saaras.py` |
 
 Local pyannote / NVIDIA models use `huggingface-cli login` (accept gated model terms on the Hub).
 
@@ -47,6 +48,7 @@ Not in git (~2.2 GB). Download 5 parquet shards from [talkbank/callhome/eng](htt
 | [Streaming Sortformer v2.1](https://huggingface.co/nvidia/diar_streaming_sortformer_4spk-v2.1) | `diarize_sortformer_v2_1.py` | NeMo CPU/GPU | Hugging Face |
 | [MSDD telephonic](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/diar_msdd_telephonic) | `diarize_msdd_telephonic.py` | NeMo CPU/GPU | NGC / HF |
 | [Deepgram Nova-3 + diarize v2](https://developers.deepgram.com/) | `diarize_deepgram_nova3.py` | Cloud API | `.env` |
+| [Sarvam Saaras v3 + diarization](https://docs.sarvam.ai/api-reference-docs/api-guides-tutorials/speech-to-text/how-to/enable-speaker-diarization) | `diarize_sarvam_saaras.py` | Cloud batch API | `.env` |
 | Sortformer v2.1 + [Nemotron 3.5 ASR](https://huggingface.co/nvidia/nemotron-3.5-asr-streaming-0.6b) | `transcribe_nemotron35_pipeline.py` | NeMo + Transformers | Hugging Face |
 
 Tested on **Python 3.12**, **pyannote.audio 4.0.7**, **torch 2.12.1** (CPU).
@@ -60,6 +62,7 @@ python diarize_sortformer_v2_1.py --audio test-audio/test_1.wav
 python diarize_3_1.py --audio test-audio/test_1.wav
 python diarize_precision_2.py --audio test-audio/test_1.wav
 python diarize_deepgram_nova3.py --audio test-audio/test_1.wav
+python diarize_sarvam_saaras.py --audio test-audio/hindi-test.wav
 python diarize_msdd_telephonic.py --audio test-audio/test_1.wav
 ```
 
@@ -80,10 +83,11 @@ python diarize_sortformer_v2_1.py --benchmark --limit 5
 python diarize_3_1.py --benchmark --limit 5
 python diarize_precision_2.py --benchmark --limit 5 --yes
 python diarize_deepgram_nova3.py --benchmark --limit 5 --yes
+python diarize_sarvam_saaras.py --benchmark --limit 5 --yes
 python diarize_msdd_telephonic.py --benchmark --limit 5
 ```
 
-Omit `--limit` for all 140 samples (slow on CPU). Cloud scripts need `--yes`; precision-2 and Deepgram support `--dry-run`.
+Omit `--limit` for all 140 samples (slow on CPU). Cloud scripts need `--yes`; precision-2, Deepgram, and Sarvam support `--dry-run`.
 
 Compare `der_pct` in `results/benchmark_*.json`. Summary for the 5-file run: `results/benchmark_comparison.json`.
 
@@ -133,16 +137,7 @@ diarization-models/
 │   └── cache/                    # precision-2 API cache (gitignored)
 └── utils/
     ├── audio.py, dataset.py, eval.py
-    ├── sortformer.py, msdd.py, deepgram.py
+    ├── sortformer.py, msdd.py, deepgram.py, sarvam.py
     ├── nemotron35_pipeline.py
     ├── cache.py, env.py
 ```
-
-## Notes
-
-- **Sortformer** is diarization-only, max 4 speakers, language-agnostic.
-- **Nemotron pipeline** is composed (not NVIDIA Multitalker Parakeet). Good for multilingual smoke tests; use Sarvam for production Indic ASR.
-- **Deepgram** returns joint STT+diar utterances, not diar-only.
-- **precision-2 / Deepgram** benchmarks cost money; use `--dry-run` first.
-- pyannote on CPU is slow (~2–3 min per 5-min file). Sortformer v2.1 is faster (~11 s per file on CPU in our 5-sample run).
-- `torchcodec` warning on Windows without FFmpeg is harmless; audio loads via soundfile.

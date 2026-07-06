@@ -1,0 +1,39 @@
+{
+  "model": "sarvam/saaras:v3+diarization",
+  "audio_file": "hindi-test.wav",
+  "inference_s": null,
+  "num_speakers": 3,
+  "num_segments": 6,
+  "segments": [
+    {
+      "speaker": "SPEAKER_00",
+      "start": 3.37,
+      "end": 7.19
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 6.79,
+      "end": 13.49
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 9.11,
+      "end": 9.67
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 13.57,
+      "end": 14.43
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 15.19,
+      "end": 19.79
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 22.05,
+      "end": 34.51
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "model": "sarvam/saaras:v3+diarization",
+  "audio_file": "test.wav",
+  "inference_s": 11.44,
+  "num_speakers": 2,
+  "num_segments": 4,
+  "segments": [
+    {
+      "speaker": "SPEAKER_02",
+      "start": 0.01,
+      "end": 4.25
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 4.91,
+      "end": 15.63
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "start": 16.15,
+      "end": 18.17
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 18.43,
+      "end": 27.35
+    }
+  ]
+}
